@@ -1,10 +1,14 @@
-<div class="header">
-  <h1>
-      
-  </h1>
-</div>
-<div class="container">
-  <div class="button">
-      <input type="button" name="button" value="Click to Sign In">
+<div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="E-mail">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Senha" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+  
+    <button>Login</button>
   </div>
-</div>

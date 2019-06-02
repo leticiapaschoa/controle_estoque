@@ -7,7 +7,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from "src/app/material-module";
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 var config = {
     apiKey: "AIzaSyCzulZSrjgglLjFIv1IbAZeqTbrGNpTaek",
@@ -21,7 +23,7 @@ var config = {
 
 @NgModule({
   declarations: [    
-    AppComponent, ToolbarComponent
+    AppComponent, MainNavComponent
   ],
   imports: [    
     BrowserModule,
@@ -29,7 +31,13 @@ var config = {
     AppRoutingModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   exports: [    
     

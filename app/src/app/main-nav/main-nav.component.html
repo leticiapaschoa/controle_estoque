@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Estoque</a>
+      <a mat-list-item href="#">Produtos</a>
+      <a mat-list-item href="#">Relatórios</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Controle de estoque</span>
+      <button *ngIf="user" mat-mini-fab [matMenuTriggerFor]="avatarDropDown" id="login" class="toolbar-avatar" color="primary" [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}">
+  </button>
+
+      <button *ngIf="!user" mat-raised-button color="primary" (click)="loginGoogle()" id="login">
+  Login with Google
+  </button>
+    </mat-toolbar>
+
+
+    <mat-menu #avatarDropDown="matMenu">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ user?.displayName }}</mat-card-title>
+          <mat-card-subtitle>{{ user?.email }}</mat-card-subtitle>
+        </mat-card-header>
+
+      </mat-card>
+
+      <button mat-menu-item (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Sign out</span>
+  </button>
+
+    </mat-menu>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -4,12 +4,16 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from "src/app/material-module";
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { EditComponent } from './produtos/edit/edit.component';
+import { ListComponent } from './produtos/list/list.component';
+import { FormsModule } from '@angular/forms';
 
 var config = {
     apiKey: "AIzaSyCzulZSrjgglLjFIv1IbAZeqTbrGNpTaek",
@@ -23,7 +27,7 @@ var config = {
 
 @NgModule({
   declarations: [    
-    AppComponent, MainNavComponent
+    AppComponent,  EditComponent, ListComponent, MainNavComponent
   ],
   imports: [    
     BrowserModule,
@@ -32,12 +36,14 @@ var config = {
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FormsModule
   ],
   exports: [    
     

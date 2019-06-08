@@ -1,0 +1,11 @@
+<div class="card mt-2" *ngFor="let produto of produtos | async">
+  <div class="card-body">
+    <h5 class="card-title">{{produto.id}}</h5>
+    <p class="card-text">{{produto.nome}}</p>
+    <p class="card-text">{{produto.qtd}}</p>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-default" (click)="edit(produto, produto.key)">Editar</button>
+    <button type="button" class="btn btn-danger ml-2" (click)="delete(produto.key)">Excluir</button>
+  </div>
+</div>

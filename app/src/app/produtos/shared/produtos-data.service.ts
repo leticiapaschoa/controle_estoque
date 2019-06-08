@@ -12,6 +12,6 @@ export class ProdutoDataService {
   constructor() { }
  
   changeProduto(produto: Produto, key: string) {
-    this.produtoSource.next({ produto: Produto, key: key });
+    this.produtoSource.next({ produto: produto, key: key });
   }
 }

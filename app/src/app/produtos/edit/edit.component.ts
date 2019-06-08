@@ -10,7 +10,7 @@ import { ProdutoDataService } from '../shared/produtos-data.service';
 })
 export class EditComponent implements OnInit {
   produto: Produto
-  key: string = '';
+  key: string ='';
 
   constructor(private produtoService: ProdutoService, private produtoDataService: ProdutoDataService) { }
 
@@ -21,6 +21,7 @@ export class EditComponent implements OnInit {
         this.produto = new Produto();
         this.produto.id = data.produto.id;
         this.produto.nome = data.produto.nome;
+        this.produto.qtd = data.produto.qtd;
         this.key = data.key;
       }
     })

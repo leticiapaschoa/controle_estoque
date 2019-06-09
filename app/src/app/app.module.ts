@@ -14,6 +14,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { EditComponent } from './produtos/edit/edit.component';
 import { ListComponent } from './produtos/list/list.component';
 import { FormsModule } from '@angular/forms';
+import { EstoqueComponent } from './produtos/estoque/estoque.component';
 
 var config = {
     apiKey: "AIzaSyCzulZSrjgglLjFIv1IbAZeqTbrGNpTaek",
@@ -27,7 +28,7 @@ var config = {
 
 @NgModule({
   declarations: [    
-    AppComponent,  EditComponent, ListComponent, MainNavComponent
+    AppComponent,  MainNavComponent, EditComponent, ListComponent, EstoqueComponent
   ],
   imports: [    
     BrowserModule,

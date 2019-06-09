@@ -1,6 +1,8 @@
+<div class="container">
 <form (ngSubmit)="onSubmit()">
 
   <div class="form-group">
+
     <label>ID</label>
     <input type="int" class="form-control" [(ngModel)]="produto.id" name="id" />
   </div>
@@ -17,3 +19,6 @@
 
   <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
+
+<app-list></app-list>
+</div>

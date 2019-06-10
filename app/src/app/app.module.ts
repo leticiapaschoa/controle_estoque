@@ -10,11 +10,12 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from "src/app/material-module";
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFooterCell, MatFormField, MatFormFieldControl } from '@angular/material';
 import { EditComponent } from './produtos/edit/edit.component';
 import { ListComponent } from './produtos/list/list.component';
 import { FormsModule } from '@angular/forms';
 import { EstoqueComponent } from './produtos/estoque/estoque.component';
+import { MatFormFieldModule} from '@angular/material';
 
 var config = {
     apiKey: "AIzaSyCzulZSrjgglLjFIv1IbAZeqTbrGNpTaek",
@@ -44,7 +45,8 @@ var config = {
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule
   ],
   exports: [    
     

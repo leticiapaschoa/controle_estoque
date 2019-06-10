@@ -1,4 +1,14 @@
 <main-nav></main-nav>
 <div class="container">
 <router-outlet></router-outlet>
+
+
+<div class="card mt-2" *ngFor="let produto of produto | async">
+    <div class="card-body">
+      <h5 class="card-title">ID: {{produto.id}}</h5>
+      <p class="card-text">Produto: {{produto.nome}}</p>
+      <p class="card-text">Qtd: {{produto.qtd}}</p>
+    </div>
+</div>
+
 </div>

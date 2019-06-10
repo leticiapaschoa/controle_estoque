@@ -28,7 +28,7 @@ var config = {
 
 @NgModule({
   declarations: [    
-    AppComponent,  MainNavComponent, EditComponent, ListComponent, EstoqueComponent
+    AppComponent,  MainNavComponent, EditComponent, ListComponent, EstoqueComponent,
   ],
   imports: [    
     BrowserModule,

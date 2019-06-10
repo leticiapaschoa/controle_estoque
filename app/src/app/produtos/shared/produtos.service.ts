@@ -3,12 +3,16 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { Produto } from './produto';
 import { map } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutoService {
 
   constructor(private db: AngularFireDatabase) { }
+
+  
+
 
   insert(produto: Produto) {
     this.db.list('produto').push(produto)
@@ -37,4 +41,9 @@ export class ProdutoService {
   delete(key: string) {
     this.db.object(`produto/${key}`).remove();
   }
+
+
+  
+
 }
+
